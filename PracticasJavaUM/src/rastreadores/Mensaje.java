@@ -38,14 +38,7 @@ public class Mensaje implements Comparable<Mensaje> {
 
 	@Override
 	public int compareTo(Mensaje o) {
-		int result = 0;
-		if (autor.compareTo(o.autor)  == -1) {
-			result = -1;
-		}
-		else if (autor.compareTo(o.autor)  == 1) {
-			result = 1;
-		}
-		return result;
+		return this.autor.compareTo(o.autor);
 	}
 
 	@Override
