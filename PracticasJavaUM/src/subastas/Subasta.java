@@ -39,13 +39,13 @@ public class Subasta {
 		return pujaMayor;
 	}
 
-	public boolean pujaValida(Usuario pujador, double cantidad) {
+	public boolean isPujaValida(Usuario pujador, double cantidad) {
 		return ((!isCerrada) && (pujador.getCredito() >= cantidad) && (pujador != propietario)
 				&& (pujaMayor == null || cantidad > pujaMayor.getCantidadPuja()));
 	}
 
 	public boolean pujar(Usuario pujador, double cantidad) {
-		if (pujaValida(pujador, cantidad)) {
+		if (isPujaValida(pujador, cantidad)) {
 			Puja puja = new Puja(pujador, cantidad);
 			listaPujas.add(puja);
 			pujaMayor = puja;

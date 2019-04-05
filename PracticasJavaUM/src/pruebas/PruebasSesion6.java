@@ -7,7 +7,6 @@ import subastas.SubastaLimitada;
 import subastas.SubastaMinima;
 import subastas.SubastaTemporal;
 import subastas.Usuario;
-import subastas.Puja;
 
 public class PruebasSesion6 {
 
@@ -53,6 +52,10 @@ public class PruebasSesion6 {
 			}
 		}
 
+		for (Subasta subasta : subastas) {
+			System.out.println(subasta);
+		}
+		
 		System.out.println("Usuario1 " + usuario1.toString());
 		System.out.println("Usuario2 " + usuario2.toString());
 

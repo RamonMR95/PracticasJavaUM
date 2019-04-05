@@ -15,11 +15,9 @@ public class SubastaLimitada extends Subasta {
 	@Override
 	public boolean pujar(Usuario pujador, double cantidad) {
 		if (super.pujar(pujador, cantidad) && listaPujas.size() <= numeroMaximoPujas) {
-			return ejecutar();
-		} else {
-			return false;
-		}
-
+			return super.ejecutar();
+		} 
+		return false;
 	}
 
 	@Override
@@ -29,8 +27,8 @@ public class SubastaLimitada extends Subasta {
 				super.ejecutar();
 			}
 			return true;
-		} else
-			return false;
+		} 
+		return false;
 	}
 
 }

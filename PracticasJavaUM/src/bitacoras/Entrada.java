@@ -1,5 +1,6 @@
 package bitacoras;
 
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class Entrada {
@@ -21,7 +22,7 @@ public class Entrada {
 
 	@Override
 	public String toString() {
-		return "Entrada [suceso=" + suceso + ", fecha=" + fecha + "]";
+		return "Entrada [suceso=" + suceso + ", fecha=" + fecha.get(Calendar.DAY_OF_MONTH) + "-" + (fecha.get(Calendar.MONTH) + 1 )+ "-" + fecha.get(Calendar.YEAR)+ "]";
 	}
 
 }

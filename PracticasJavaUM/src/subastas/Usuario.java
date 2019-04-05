@@ -19,6 +19,7 @@ public class Usuario {
 	public Usuario(String nombre) {
 		this.nombre = nombre;
 		this.credito = 0;
+		this.subastas = new LinkedList<Subasta>();
 	}
 
 	/* Metodos get */

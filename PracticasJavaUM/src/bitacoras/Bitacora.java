@@ -6,7 +6,7 @@ public class Bitacora {
 
 	private final String identificador;
 	private LinkedList<Entrada> listaEntradas;
-	private int numeroEntradaRegistradas;
+	public int numeroEntradaRegistradas;
 
 	public Bitacora(String identificador) {
 		this.identificador = identificador;
@@ -14,6 +14,12 @@ public class Bitacora {
 		this.numeroEntradaRegistradas = 0;
 	}
 
+	public Bitacora(Bitacora bitacora) {
+		this.identificador = bitacora.identificador;
+		this.listaEntradas = bitacora.listaEntradas;
+		this.numeroEntradaRegistradas = bitacora.numeroEntradaRegistradas;
+	}
+	
 	public String getIdentificador() {
 		return identificador;
 	}
@@ -28,7 +34,10 @@ public class Bitacora {
 
 	public boolean registroEntradas(String suceso) {
 		Entrada entrada = new Entrada(suceso);
-		return listaEntradas.add(entrada);
+		if (listaEntradas.add(entrada)) {
+			this.numeroEntradaRegistradas++;
+		}
+		return true;
 	}
 
 	@Override
@@ -37,4 +46,8 @@ public class Bitacora {
 				+ ", numeroEntradaRegistradas=" + numeroEntradaRegistradas + "]";
 	}
 
+	@Override
+	public Bitacora clone() {
+		return new Bitacora(this);
+	}
 }
